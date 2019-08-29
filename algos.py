@@ -51,8 +51,35 @@ def is_palindrome(s):
 print(is_palindrome('madam'))
 
 
-def is_palindrome_v2(str):
+def is_palindrome_v2(s):
     k = s.strip(" ").lower()
     return k == k[::-1]
 
 is_palindrome_v2('helleh')
+
+
+
+#binary search
+
+
+
+def search(nums, target) -> int:
+    start = 0
+    end = len(nums) -1
+    while  start <= end:
+        middle =  (start + end)// 2
+        if nums[middle] == target:
+            return middle
+        else:
+            # if the target is less than the
+            #middle the end of search area becomes middle -1
+            if  target < nums[middle]:
+                end = middle -1
+            # if not the search area become middle + 1
+            else:
+                start = middle + 1
+   
+    return -1;
+
+print(search([0,1,2,3,4,5,6,7], 10))
+    
