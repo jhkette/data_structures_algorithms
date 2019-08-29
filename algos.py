@@ -61,8 +61,6 @@ is_palindrome_v2('helleh')
 
 #binary search
 
-
-
 def search(nums, target) -> int:
     start = 0
     end = len(nums) -1
@@ -83,3 +81,27 @@ def search(nums, target) -> int:
 
 print(search([0,1,2,3,4,5,6,7], 10))
     
+#remove the one index that is not a duplicate in an array
+def duplicate_check(nums):
+    hash_table ={}
+    for i in nums:
+        try:
+            hash_table.pop(i)
+        except:
+            hash_table[i] = 1
+    return hash_table.popitem()[0]
+print('duplicate check')
+print(duplicate_check([0,1,0,1,2,3,2]))
+
+
+# Python code to remove duplicate elements 
+def Remove(duplicate): 
+    final_list = [] 
+    for num in duplicate: 
+        if num not in final_list: 
+            final_list.append(num) 
+    return final_list 
+      
+# Driver Code 
+duplicate = [2, 4, 10, 20, 5, 2, 20, 4] 
+print(Remove(duplicate)) 
