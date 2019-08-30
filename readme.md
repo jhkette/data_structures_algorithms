@@ -1,4 +1,3 @@
 # Algorithms
 
-A few algorithms in javascript and python. These include binary search, function that use
-two pointer method. Also checking for palindromes in strings. Data structures such as linked lists, doubly linked lists hash tables to be added later.
+A few algorithms in javascript and python. These includes binary search, functions/problems that use a two pointer method. Also various string functions such as checking for palindromes in strings. Also included are data structures such as linked lists and doubly linked lists + prob trees to be added later.

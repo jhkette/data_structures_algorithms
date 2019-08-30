@@ -62,3 +62,13 @@ function search (arr,target){
     }
     return -1;
 }
+// reverse a string
+function reverse(str){
+    var x = str.split('').reverse().join('')
+    return x
+    
+}
+// shorter reverse
+const reverse2 = (str)  =>  {
+   return [...str].reverse.join('')   
+}
