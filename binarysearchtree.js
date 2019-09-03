@@ -13,11 +13,11 @@ class BinarySearchTree {
     insert(value){
         var newNode = new Node(value); // new node
         if(this.root === null){ // check if there is a root
-            this.root = newNode; //asign root if none exists.
+            this.root = newNode; //asign root if none exists - it equal NEWDODE
             return this; // return to stop method
         }
         var current = this.root; // current == root
-        while(true){ // while true
+        while(true){ // while true // this is always - so we need to make sure we return to break while loop
             if(value === current.value) return undefined; // if value == current value ignore
             if(value < current.value){ // if value is less - assign to left (if current.left is null)
                 if(current.left === null){
@@ -56,6 +56,7 @@ class BinarySearchTree {
 
     }
     BFS(){ // uses queue array
+        // space complexity - has to store data - so space complexity increases
         var node = this.root, // root
             data = [], // data variable
             queue = []; //queue variable
@@ -94,7 +95,7 @@ class BinarySearchTree {
         traverse(this.root);
         return data;
     }
-    DFSInOrder(){ // this in order
+    DFSInOrder(){ // this returns data in order
         var data = [];
         function traverse(node){
             if(node.left) traverse(node.left);
