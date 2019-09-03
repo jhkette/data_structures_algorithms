@@ -5,6 +5,8 @@ class Node {
     }
 }
 
+// queue is fifo FIRST IN FIRST OUT
+
 class Queue {
     constructor(){
         this.first = null;
@@ -34,4 +36,5 @@ class Queue {
         this.size--;
         return temp.value;
     }
+   
 }

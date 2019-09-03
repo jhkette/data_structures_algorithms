@@ -20,6 +20,8 @@ print(two_sum(numbers,target))
 # Given a sorted array nums, remove the duplicates 
 # in-place such that each element appear only once and return the new length.
 # Two pointer solution
+# looping thourgh checking that n is bigger than preceding index. then moving along array
+# now making nums[idx] =n and idx = idx +1
 def remove_duplicates(nums):
     idx = 1
     for n in nums[1:]:
@@ -29,6 +31,7 @@ def remove_duplicates(nums):
 
 
 arr = [0,0,1,1,1,2,2,3,3,4]
+print('this is the duplicates')
 print(remove_duplicates(arr))
 
 #check for palindrome
@@ -105,3 +108,16 @@ def Remove(duplicate):
 # Driver Code 
 duplicate = [2, 4, 10, 20, 5, 2, 20, 4] 
 print(Remove(duplicate)) 
+
+# Starting from the left every time we find a value that is the target value we swap it out with an item starting from the right. We decrement end each time as we know that the final item is the target value and only increment start once we know the value is ok. Once start 
+# reaches end we know all items after that point are the target value so we can stop there.
+
+ def removeElement(self, nums, val):
+    start, end = 0, len(nums) - 1
+    while start <= end:
+        if nums[start] == val:
+            nums[start], nums[end], end = nums[end], nums[start], end - 1
+        else:
+            start +=1
+    return start
+
