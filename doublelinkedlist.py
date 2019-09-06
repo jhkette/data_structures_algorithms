@@ -1,3 +1,5 @@
+
+
 class Node:
     def __init__(self, value):
         self.next = None
@@ -25,6 +27,39 @@ class DoublyLinkedList:
         self.length += 1
         return self
 
+    def pop(self):
+        if not self.head:
+            return None
+        poppedNode = self.tail
+        if self.length == 1:
+            self.head = None
+            self.tail = None
+        else:
+            self.tail = poppedNode.prev 
+            self.tail.next = None
+            poppedNode.prev = None
+        self.length -= 1
+        return poppedNode
+
+    def shift(self):
+
+        if not self.head:
+            return None
+        old_head = self.head
+        if self.length == 1:
+            self.head = None
+            self.tail = None
+        else: 
+            self.head = old_head.next
+            old_head.next = None
+            old_head.prev = None
+        return old_head
+
+
+    
+        
+
+
     def print(self):
         current = self.head
         while current is not None:
@@ -36,4 +71,9 @@ class DoublyLinkedList:
 x = DoublyLinkedList()
 x.push(2)
 x.push(3)
+x.push(5)
+x.print()
+x.pop()
+x.shift()
+print('-----')
 x.print()
