@@ -56,10 +56,6 @@ class DoublyLinkedList:
         return old_head
 
 
-    
-        
-
-
     def print(self):
         current = self.head
         while current is not None:
