@@ -26,7 +26,7 @@ class SinglyLinkedList{
     }
     pop(){
         if(!this.head){
-            return undefined
+            return null
         }
         var current = this.head;
         var newTail = current;
@@ -45,7 +45,7 @@ class SinglyLinkedList{
     }
     shift(){
         if(!this.head){
-            return undefined
+            return null
         }
         var current = this.head;
         this.head = current.next;
