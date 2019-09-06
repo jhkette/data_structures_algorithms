@@ -6,7 +6,7 @@ class Node:
         self.value = value
 
 class List:
-    def __init__(self, value):
+    def __init__(self):
         self.head = None
         self.tail = None
         self.length = 0
