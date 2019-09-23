@@ -118,3 +118,4 @@ def majorityElement2(nums) -> int:
             return k
 
 print(majorityElement2([2,2,1,1,1,2,2]))
+
