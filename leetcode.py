@@ -18,3 +18,63 @@ def removeElement( nums, val):
     return j
 
 print(removeElement([3,2,2,2,2,2,3], 3))
+
+
+# Given an input string, reverse the string word by word.
+# Example 1:
+
+# Input: "the sky is blue"
+# Output: "blue is sky the"
+
+def reverseWords(s):
+    return " ".join(s.strip().split()[::-1])
+
+# DOne without strip, join, split etc
+# @param s, a string
+# @return a string
+def reverseWords(s):
+    # First reverse entire string, then iterate over reversed string
+    # and again reverse order of characters within a word. Append each word to words.
+    word = ""
+    words = ""
+    s = s[::-1]
+    for j, i in enumerate(s):
+        # character is not space, a current word exists, 
+        # and previous character is space, e.g. i=b in " a b":
+        if i != " " and word != "" and s[j-1] == " ":
+            # add current word to words and append " " to later add this i
+            words += (word + " ")
+            word = i
+        # character is not space, but it's either first character in string
+        # or is part of current word, e.g. i=b in "b", " b" "ab", "a ab "
+        elif i != " ":
+            word = i + word
+        else:
+            continue
+
+    words += word
+    
+    return(words)
+
+# Write a function that reverses a string. 
+# The input string is given as an array of characters char[].
+
+# Do not allocate extra space for another array, you must do this 
+# by modifying the input array in-place with O(1) extra memory.
+
+# Example 1:
+
+# Input: ["h","e","l","l","o"]
+# Output: ["o","l","l","e","h"]
+
+def reverse_string(self, s: List[str]) -> None:
+        """
+    Do not return anything, modify s in-place instead.
+    """
+    left = 0        # left index border
+    right = len(s)-1        # right index border
+    while(left < right):        # as long as left and right don't meet
+        s[left], s[right] = s[right], s[left]       # exchange both elements
+        left += 1       # move left index to the right
+        right -= 1      # move right index to the left
+    return s

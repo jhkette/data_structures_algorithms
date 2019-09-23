@@ -48,3 +48,26 @@ function validAnagram(first, second){
 }
 
 validAnagram('anagrams', 'nagaramm')
+
+function sameFrequency(num1, num2){
+    const number1 = num1.toString()
+    const number2 = num2.toString()
+    if(number1.length != number2.length){
+        return false
+    }
+    let lookup = {}
+    number1.split('').forEach(n => {
+        return lookup[n] ? lookup[n] += 1 : lookup[n] =1;
+
+    });
+    console.log(lookup)
+   
+    for(let i of number2.split('')){
+        if(!lookup[i]){
+            return false
+        }else{
+            lookup[i] -= 1;
+        }
+    }
+    return true
+}
