@@ -57,6 +57,5 @@ var majorityElement = function(nums) {
         }
          
     }
-    return Object.keys(hash).reduce((a, b) => hash[a] > hash[b] ? a : b);
-    
+    return Object.keys(hash).reduce((a, b) => hash[a] > hash[b] ? a : b); 
 };

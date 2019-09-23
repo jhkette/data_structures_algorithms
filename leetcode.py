@@ -67,8 +67,8 @@ def reverseWords(s):
 # Input: ["h","e","l","l","o"]
 # Output: ["o","l","l","e","h"]
 
-def reverse_string(self, s: List[str]) -> None:
-        """
+def reverse_string (s):
+    """
     Do not return anything, modify s in-place instead.
     """
     left = 0        # left index border
@@ -78,3 +78,43 @@ def reverse_string(self, s: List[str]) -> None:
         left += 1       # move left index to the right
         right -= 1      # move right index to the left
     return s
+
+
+# // majority element
+# // Given an array of size n, find the majority element. 
+# // The majority element is the element that appears more than ⌊ n/2 ⌋ times.
+
+# // You may assume that the array is non-empty and the majority 
+# // element always exist in the array.
+
+# // Example 1:
+
+# // Input: [3,2,3]
+# // Output: 3
+
+
+def majorityElement(nums) -> int:
+    obj = {}
+    for n in nums:
+        if n in obj:
+            obj[n] += 1
+        else:
+            obj[n] = 1
+            
+    return max(obj, key=obj.get) #nb other way below actually better for specific question
+    # as it anwser will be half of array. This method good for finding largest num in object
+
+
+def majorityElement2(nums) -> int:
+    obj = {}
+    for n in nums:
+        if n in obj:
+            obj[n] += 1
+        else:
+            obj[n] = 1
+            
+    for k,v in obj.items():
+        if v > len(nums)//2:
+            return k
+
+print(majorityElement2([2,2,1,1,1,2,2]))
