@@ -61,3 +61,39 @@ var majorityElement = function(nums) {
 };
 
 majorityElement([2,2,1,1,1,2,2])
+
+
+// Given a word, you need to judge whether the usage of capitals in it is right or not.
+
+// We define the usage of capitals in a word to be right when one of the following cases
+// holds:
+
+// All letters in this word are capitals, like "USA".
+// All letters in this word are not capitals, like "leetcode".
+// Only the first letter in this word is capital, like "Google".
+// Otherwise, we define that this word doesn't use capitals in a right way.
+
+
+
+// Example 1:
+
+// Input: "USA"
+// Output: True
+ 
+
+// Example 2:
+
+// Input: "FlaG"
+// Output: False
+
+
+var detectCapitalUse = function(word) {
+    // either all capitals, all small cases, or Capital follow by small cases
+    return /^[A-Z]+$|^[a-z]+$|^[A-Z][a-z]+$/.test(word);
+};
+
+// or
+
+var detectCapitalUse = function(word) {
+    return word === word.toUpperCase() || word === word[0] + word.substr(1).toLowerCase();
+};

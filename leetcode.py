@@ -119,3 +119,33 @@ def majorityElement2(nums) -> int:
 
 print(majorityElement2([2,2,1,1,1,2,2]))
 
+
+# All letters in this word are capitals, like "USA".
+# All letters in this word are not capitals, like "leetcode".
+# Only the first letter in this word is capital, like "Google".
+# Otherwise, we define that this word doesn't use capitals in a right way.
+
+
+
+#  Example 1:
+
+# Input: "USA"
+# Output: True
+ 
+
+# Example 2:
+
+# Input: "FlaG"
+# Output: False
+
+ def detectCapitalUse(word):
+        """
+        :type word: str
+        :rtype: bool
+        """
+        if word.lower()==word or word.upper()==word:
+            return True
+        elif word[0].lower()!=word[0] and word[1:].lower()==word[1:]:
+            return True
+        else:
+            return False
