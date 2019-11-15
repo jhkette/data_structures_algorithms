@@ -138,14 +138,15 @@ print(majorityElement2([2,2,1,1,1,2,2]))
 # Input: "FlaG"
 # Output: False
 
- def detectCapitalUse(word):
-        """
-        :type word: str
-        :rtype: bool
-        """
-        if word.lower()==word or word.upper()==word:
-            return True
-        elif word[0].lower()!=word[0] and word[1:].lower()==word[1:]:
-            return True
-        else:
-            return False
+def detectCapitalUse(word):
+    """
+    :type word: str
+    :rtype: bool
+    """
+    if word.lower()==word or word.upper()==word:
+        return True
+    elif word[0].lower()!=word[0] and word[1:].lower()==word[1:]:
+        return True
+    else:
+        return False
+print(detectCapitalUse('USA'))
