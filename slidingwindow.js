@@ -15,3 +15,20 @@ function maxSubArraySum(arr, num){
 }
 
 maxSubarraySum([2,6,9,2,1,8,5,6,3],3)
+
+function findMaxAverage(nums, k){
+    let maxSum = 0;
+    let tempSum = 0;
+    if(nums.length < k) return null;
+    for(let i = 0; i < k; i++){
+        maxSum += nums[i]
+    }
+    tempSum = maxSum;
+    for (let i = k; i < nums.length; i++ ){
+        tempSum = tempSum - nums[i - k] + nums[i];
+        maxSum = Math.max(maxSum, tempSum)
+    }
+    return maxSum / k;
+}
+
+findMaxAverage([2,6,9,2,1,8,5,6,3],3)
