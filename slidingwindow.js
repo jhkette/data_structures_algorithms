@@ -7,7 +7,8 @@ function maxSubArraySum(arr, num){
     } 
     tempSum = maxSum; // assign tempsum
     for (let i = num; i <arr.length; i++){
-        tempSum = tempSum - arr[i - num] + arr[i]; //'slidewindow' - delete last index and add the additional one
+        tempSum = tempSum - arr[i - num] + arr[i]; //'slidewindow' - delete last index and 
+        // add the additional one
         //  this is now tempsum
         maxSum = Math.max(maxSum, tempSum);// maxsum is mathMax of tempsum
     }

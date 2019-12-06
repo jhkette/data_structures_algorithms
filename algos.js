@@ -35,7 +35,6 @@ function search (arr,target){
                 start = middle +1
             }
         }
-    
     }
     return -1;
 }
@@ -68,13 +67,13 @@ searchInsert([1,3,5,6], 3)
 // # THIS IS THE WAY TO FIND A SUM FROM AN ARRAY -
 // # USING A TWO POINTER TECHNIQUE
 
-function findsum(nums, target){
+function findsum(numbers, target){
     i = 0;
     j = numbers.length -1;
     while(i < j){
        let temp = numbers[i] + numbers[j];
        if(temp == target){
-           let arr =[i+1, j+1]
+           let arr =[i, j]
            return arr;
        }
         else if(temp < target){
