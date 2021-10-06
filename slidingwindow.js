@@ -1,4 +1,11 @@
-function maxSubArraySum(arr, num){
+/**
+ * Sliding window
+ * This pattern involves creating a window which can either be an array or
+ * number from on position to another. Depending on a certain condition, the
+ * window either increases or closes (and a new window is created)
+ */
+
+ function maxSubArraySum(arr, num){
     let maxSum = 0;
     let tempSum = 0;
     if(arr.length < num) return null;

@@ -1,3 +1,8 @@
+/* write a function same , which accepts two arrays. the function should return 
+true if every value in the array has a corrosponding value in squared in the second array. The
+frequency of values is the same. ie same ([1,2,1], [4,4,1])
+*/
+
 function same(arr1, arr2) {
     if (arr1.length !== arr2.length) {
         return false; // if array is not the same lenght return false 
@@ -13,10 +18,11 @@ function same(arr1, arr2) {
     console.log(frequencyCounter1);// console log objects
     console.log(frequencyCounter2);
     for (let key in frequencyCounter1) { // for in frequencyCounter1
-        if (!(key ** 2 in frequencyCounter2)) { // check key is in frequency2 by multiplying
+        if (!(key ** 2 in frequencyCounter2)) { // check key is in frequency2 by multiplying key value pow 2
             return false;
         }
-        if (frequencyCounter1[key] == frequencyCounter2[key ** 2]) { // check if the values equal
+        if (frequencyCounter1[key] == frequencyCounter2[key ** 2]) { // check if the values are equal ie 
+            // if there are 2,2 == 4,4
             return false;
         }
     }
@@ -35,8 +41,8 @@ function validAnagram(first, second){
       lookup[val] ? lookup[val] += 1 : lookup[val] = 1;
     }
     console.log(lookup)
-    for(i = 0; i < second.length; i ++){
-        let letter = second[i]
+    for(let val of second){
+        let letter = val
         if(!lookup[letter]){
             return false
         } else{
@@ -47,7 +53,7 @@ function validAnagram(first, second){
         
 }
 
-validAnagram('anagrams', 'nagaramm')
+validAnagram('anagrams', 'nagarams')
 
 function sameFrequency(num1, num2){
     const number1 = num1.toString()
