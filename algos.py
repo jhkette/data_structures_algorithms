@@ -11,7 +11,7 @@ def binary_search(arr, elem):
         middle = round(start + end)//2
     if arr[middle] == elem:
         return arr[middle]
-    return -1;
+    return -1
         
 print(binary_search([0,1,2,3,4,5,6,10,12], 10))
 print('This is binary search')
@@ -139,7 +139,7 @@ def search(nums, target) -> int:
             else:
                 start = middle + 1
    
-    return -1;
+    return -1
 
 print(search([0,1,2,3,4,5,6,7], 10))
     
