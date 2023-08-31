@@ -46,6 +46,9 @@ function validAnagram(first, second){
         if(!lookup[letter]){
             return false
         } else{
+            // we need to subtract one as for example
+            // there are 3 as - so next time we check - when
+            // we get to 0 the prior check will retrun falsey.
             lookup[letter] -=1;
         }
     }

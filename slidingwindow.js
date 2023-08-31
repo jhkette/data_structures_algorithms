@@ -22,7 +22,7 @@
     return maxSum
 }
 
-maxSubarraySum([2,6,9,2,1,8,5,6,3],3)
+console.log(maxSubArraySum([2,6,9,2,1,8,5,6,3],3))
 
 function findMaxAverage(nums, k){
     let maxSum = 0;
@@ -39,4 +39,4 @@ function findMaxAverage(nums, k){
     return maxSum / k;
 }
 
-findMaxAverage([2,6,9,2,1,8,5,6,3],3)
+console.log(findMaxAverage([2,6,9,2,1,8,5,6,3],3))

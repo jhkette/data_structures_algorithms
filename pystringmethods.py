@@ -31,10 +31,11 @@ def password_generator(user_name):
 
 
 authors = "Audre Lorde,Gabriela Mistral,Jean Toomer,An Qi,Walt Whitman,Shel Silverstein,Carmen Boullosa,Kamala Suraiyya,Langston Hughes,Adrienne Rich,Nikki Giovanni"
-
+#split string on ,
 author_names=authors.split(',')
 
-# basic string splitting
+# basic string splitting 
 author_last_names =[]
 for name in author_names:
+    # split string then get first index of the string
   author_last_names.append(name.split()[1])

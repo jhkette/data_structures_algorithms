@@ -9,6 +9,8 @@
 
 // find a sum that sums to zero from array return false
 // if it doesn't
+// time complexity 0 n
+//Space complexity 0 1
 function sumZero(nums){
     i = 0;
     j = nums.length -1
