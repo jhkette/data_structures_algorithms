@@ -46,7 +46,7 @@ def first_unique(s):
             return idx     
     return -1
 
-print(first_unique('helloh'));
+print(first_unique('helloh'))
 
 
 # Time complexity : 0(n) since we go through the string of length N two times.

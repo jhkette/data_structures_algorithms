@@ -150,3 +150,39 @@ def detectCapitalUse(word):
     else:
         return False
 print(detectCapitalUse('USA'))
+
+
+""""
+Sell stock problem
+You are given an array prices where prices[i] is the price of a given stock on the ith day.
+
+You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
+
+Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
+
+ 
+
+Example 1:
+
+Input: prices = [7,1,5,3,6,4]
+Output: 5
+Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
+Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
+"""""
+def max_profit(prices: list[int])->int:
+    l,r = 0,1 #left = buy, right = sell
+    maxP = 0
+
+    while r < len(prices): # while r is less than the length of prices
+        if prices[l] < prices[r]: #if there is a profit
+            # calculate proft
+            profit = prices[r] - prices[l] #calc proftit
+            maxP = max(maxP, profit) #get the max
+        else:
+            l =r #if prices isn't greater move the left pointer
+        r+=1
+    return maxP
+
+
+prices = [7,1,5,3,6,4]
+print(max_profit(prices)) # should be 5

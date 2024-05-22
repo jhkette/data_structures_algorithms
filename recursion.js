@@ -15,11 +15,13 @@ function collectOddValues(arr){
 
 collectOddValues([1,2,3,4,5])
                                       
-
+// 3! = 3 * 2 * 1. which equals 6.
+// Factorial of a number is the multiplication of all the integers from that number to 1.
 function factorial(num){
     if(num === 1) return 1;
     return num * factorial(num-1);
 }
+
 
 function power(base, exponent){
     if(exponent === 0) return 1;

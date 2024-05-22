@@ -25,8 +25,10 @@
 console.log(maxSubArraySum([2,6,9,2,1,8,5,6,3],3))
 
 function findMaxAverage(nums, k){
+
     let maxSum = 0;
     let tempSum = 0;
+    if (nums === null) return null
     if(nums.length < k) return null;
     for(let i = 0; i < k; i++){
         maxSum += nums[i]
@@ -36,7 +38,7 @@ function findMaxAverage(nums, k){
         tempSum = tempSum - nums[i - k] + nums[i];
         maxSum = Math.max(maxSum, tempSum)
     }
-    return maxSum / k;
+    return Math.round(maxSum);
 }
 
-console.log(findMaxAverage([2,6,9,2,1,8,5,6,3],3))
+console.log(findMaxAverage([2,2,2,2,2,2,2,2,4,2],3))
